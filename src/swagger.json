@@ -1,0 +1,77 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "rentalX Documentation",
+        "description": "This is an API for car rentals.",
+        "version": "1.0.0",
+        "contact": {
+            "email": "marcos@mogri.com"
+        }
+    },
+    "paths": {
+        "/categories": {
+            "post": {
+                "tags": ["Category"],
+                "summary": "This request will create a new category",
+                "description": "Inside of rentalX, the categories will include the different types of cars available in the application, such as Sedan, SUV, Hatchback, and many more!",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "name": "SUV",
+                                    "description": "Category for SUV cars."
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Success"
+                    },
+                    "500": {
+                        "description": "Category already exists"
+                    }
+                }
+            },
+            "get": {
+                "tags": ["Category"],
+                "summary": "This request will list all categories",
+                "description": "If many categories are registered in the system, this route will allow the user to view all of them.",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "description": {
+                                                "type": "string"
+                                            }
+                                        }   
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
