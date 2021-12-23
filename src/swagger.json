@@ -1,7 +1,7 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "rentalX Documentation",
+        "title": "rentX Documentation",
         "description": "This is an API for car rentals.",
         "version": "1.0.0",
         "contact": {
@@ -13,7 +13,7 @@
             "post": {
                 "tags": ["Category"],
                 "summary": "This request will create a new category",
-                "description": "Inside of rentalX, the categories will include the different types of cars available in the application, such as Sedan, SUV, Hatchback, and many more!",
+                "description": "Inside of rentX, the categories will include the different types of cars available in the application, such as Sedan, SUV, Hatchback, and many more!",
                 "requestBody": {
                     "content": {
                         "application/json": {
